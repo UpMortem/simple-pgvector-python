@@ -17,6 +17,10 @@ This library provides the following methods:
 - Perform vector searches to find the closest vectors to a query vector.
 - Flexible testing with stubs for in-memory testing without the need for a PostgreSQL database.
 
+## Project Applications
+
+This project can be instrumental in building complex applications, including a Retrieval-Augmented Generation (RAG) application. Its ability to perform vector searches with metadata makes it suitable for tasks that require efficient and accurate retrieval of information, an essential component in RAG systems.
+
 ## Requirements
 
 - Python 3.7+
