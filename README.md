@@ -56,7 +56,7 @@ Before running the application, you need to set up the database and create the n
 from my_database_library.database import create_table
 
 # Create a table with a namespace
-create_table(vector_dimentions=1536)
+create_table(vector_dimensions=1536)
 ```
 
 3. **Run Database Creation Script**: Use the provided database creation script to create the necessary table in the database. Make sure you have PostgreSQL installed on your machine.
