@@ -1,3 +1,6 @@
+
+![PG](https://github.com/UpMortem/simple-pgvector-python/assets/469387/cd47dd3e-d8ae-44f7-a074-aa2c146a518b)
+
 # Vector Search with Metadata
 
 This project is a Python implementation for vector search with metadata using PostgreSQL and SQLAlchemy. It provides a flexible way to store vectors along with associated metadata, whether you are using PostgreSQL as your database or you want to test the functionality with in-memory data structures. It is very high level, so if you need finer level access just use pgvector-python directly rather than this library. This library is inspired by Pinecone's API for simplicity. Default for embeddings dimensions is that for Ada by OpenAI, however this is configurable in the code.
