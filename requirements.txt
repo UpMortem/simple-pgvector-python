@@ -1,0 +1,4 @@
+numpy
+sqlalchemy==2.0.23
+pgvector==0.2.3
+
