@@ -17,8 +17,8 @@ class VectorItem(Base):
     __tablename__ = 'vector_items'
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    vector = Column(pgvector.sqlalchemy.VectorType(dimension=VECTOR_DIMENSION))
-    metadata = Column(JSON)
+    vector = Column(pgvector.sqlalchemy.Vector(VECTOR_DIMENSION))
+    meta_data = Column(JSON)
 
 def initialize_database(database_url: str, namespace: Optional[str] = None) -> Session:
     engine = create_engine(database_url)
@@ -36,10 +36,10 @@ def initialize_database(database_url: str, namespace: Optional[str] = None) -> S
 
     return Session()
 
-def add_vector_item(session: Session, name: str, vector: List[float], metadata: Optional[Dict[str, str]] = None) -> None:
+def add_vector_item(session: Session, name: str, vector: List[float], meta_data: Optional[Dict[str, str]] = None) -> None:
     """ Adds a new vector item to the database. """
     try:
-        item = VectorItem(name=name, vector=vector, metadata=metadata)
+        item = VectorItem(name=name, vector=vector, meta_data=meta_data)
         session.add(item)
         session.commit()
         logging.info("Added new vector item: %s", name)
@@ -48,12 +48,12 @@ def add_vector_item(session: Session, name: str, vector: List[float], metadata: 
         session.rollback()
         raise
 
-def update_vector_item(session: Session, name: str, vector: List[float], metadata: Optional[Dict[str, str]] = None) -> bool:
+def update_vector_item(session: Session, name: str, vector: List[float], meta_data: Optional[Dict[str, str]] = None) -> bool:
     """ Updates an existing vector item. """
     try:
         existing_item = session.query(VectorItem).filter(VectorItem.name == name).one()
         existing_item.vector = vector
-        existing_item.metadata = metadata
+        existing_item.metadata = meta_data
         session.commit()
         logging.info("Updated vector item: %s", name)
         return True

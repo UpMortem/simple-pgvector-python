@@ -128,5 +128,10 @@ Now, you can integrate the Vector Search Library into your existing Python scrip
 python3 -m unittest tests.test_vector_search_stub
 ```
 
+#### Run unit tests
+```
+python -m unittest tests/test_vector_search.py
+```
+
 ## License
 MIT Linense. Go nuts.
