@@ -69,6 +69,7 @@ Database Connection: Ensure that your application is configured to connect to th
 Now, your database is set up, and the application is ready to use the PostgreSQL database to store and query vector data.
 
 ### Using the Vector Search Library
+See main.py for an example of how to actually use the library.
 
 If you have an existing Python script and you want to integrate the Vector Search Library into it for vector search functionality, follow these steps:
 
