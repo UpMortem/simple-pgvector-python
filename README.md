@@ -136,5 +136,8 @@ python3 -m unittest tests.test_vector_search_stub
 python -m unittest tests/test_vector_search.py
 ```
 
+## Contribution
+Guidelines for contributing to this project are available in CONTRIBUTING.md.
+
 ## License
 MIT Linense. Go nuts.
